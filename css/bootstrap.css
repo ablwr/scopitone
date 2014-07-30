@@ -1017,11 +1017,9 @@ h6,
 .h5,
 .h6 {
   font-family: 'Lobster Two', cursive;
-  color: lightgrey;
   font-family: inherit
   font-weight: 500;
   line-height: 1.1;
-  color: lightgrey;
 }
 h1 small,
 h2 small,
@@ -1099,7 +1097,8 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 200px;
+  text-align: center;
+  font-size: 120px;
 }
 h2,
 .h2 {
