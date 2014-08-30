@@ -1016,6 +1016,8 @@ h6,
 .h4,
 .h5,
 .h6 {
+  position: absolute;
+  text-align: center;
   font-family: 'Lobster Two', cursive;
   font-family: inherit
   font-weight: 500;

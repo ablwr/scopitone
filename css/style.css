@@ -1,10 +1,10 @@
 #chevron {
-  position: relative;
+  position: absolute;
   text-align: center;
   padding: 12px;
   margin-bottom: 6px;
-  height: 60px;
-  width: 200px;
+  height: 260px;
+  width: 100%;
 }
 
 #chevron:before {
@@ -13,7 +13,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 51%;
+  width: 50%;
   background: gold;
   -webkit-transform: skew(0deg, 6deg);
   -moz-transform: skew(0deg, 6deg);
@@ -21,6 +21,7 @@
   -o-transform: skew(0deg, 6deg);
   transform: skew(0deg, 6deg);
 }
+
 #chevron:after {
   content: '';
   position: absolute;
