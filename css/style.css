@@ -38,6 +38,46 @@
   transform: skew(0deg, -8deg);
 }​
 
+#chevron2 {
+  z-index: 2;
+  position: absolute;
+  text-align: center;
+  padding: 18px;
+  margin-bottom: 12px;
+  height: 40px;
+  width: 100%;
+}
+
+#chevron2:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 60%;
+  width: 50%;
+  background: teal;
+  -webkit-transform: skew(0deg, 8deg);
+  -moz-transform: skew(0deg, 8deg);
+  -ms-transform: skew(0deg, 8deg);
+  -o-transform: skew(0deg, 8deg);
+  transform: skew(0deg, 8deg);
+}
+
+#chevron2:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 60%;
+  width: 50%;
+  background: teal;
+  -webkit-transform: skew(0deg, -8deg);
+  -moz-transform: skew(0deg, -8deg);
+  -ms-transform: skew(0deg, -8deg);
+  -o-transform: skew(0deg, -8deg);
+  transform: skew(0deg, -8deg);
+}​
+
 .center {     
     height: 30px; 
     width: 639px;  
@@ -50,9 +90,9 @@
 
 .video-container {
     position: relative;
-    top: 260px; /* temp for fixing header */
-    padding-bottom: 56.25%;
-    padding-top: 30px; height: 0; overflow: hidden;
+    top: 280px; /* temp for fixing header */
+    padding-bottom: 52.25%;
+    padding-top: 40px; height: 0; overflow: hidden;
 }
  
 .video-container iframe,
@@ -74,5 +114,5 @@ h1 {
   font-weight: 500;
   line-height: 1.1;
   font-size: 100px;
-  padding-top: 30px;
+  padding-top: 50px;
 }
