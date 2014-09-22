@@ -1,78 +1,78 @@
-
-
-       var random_vids = [
-        "Vow27wAwXvw",
-        "sQ4X-A4rSgY",
-        "0ZVKVCrtfDA",
-        "XyUxjR8vKiM",
-        "898oHCARiK4",
-        "WoC33S0o6f0",
-        "L6dyo2zfJVQ",
-        "stOeGcDnsj8",
-        "rk1-NaEXrmI",
-        "z9kHj4FTgek",
-        "1mBteyxYPtA",
-        "Hkx4vUUqa0",
-        "unjvxHtcpKQ",
-        "YBCzUi67eZA",
-        "IvZLA4En-ug",
-        "dcq-RJ4lVe4"
+var random_vids = [
+    "Vow27wAwXvw",
+    "sQ4X-A4rSgY",
+    "0ZVKVCrtfDA",
+    "XyUxjR8vKiM",
+    "898oHCARiK4",
+    "WoC33S0o6f0",
+    "L6dyo2zfJVQ",
+    "stOeGcDnsj8",
+    "rk1-NaEXrmI",
+    "z9kHj4FTgek",
+    "1mBteyxYPtA",
+    "Hkx4vUUqa0",
+    "unjvxHtcpKQ",
+    "YBCzUi67eZA",
+    "IvZLA4En-ug",
+    "dcq-RJ4lVe4"
     ];
 
-    var array_pop = function(arr, i) {
-        // slice() modifies the array in-place and returns an array
-        // of the element we want.
-        return arr.splice(i,1)[0]; 
-    };
+var array_pop = function(arr, i) {
+    // slice() modifies the array in-place and returns an array
+    // of the element we want.
+    return arr.splice(i,1)[0]; 
+};
 
-    var get_random_vid = function() {
-        var i = Math.floor((Math.random()*random_vids.length));
-        // Pops out the video ID we're using so we don't re-use
-        return array_pop(random_vids, i);
-    };
+var get_random_vid = function() {
+    var i = Math.floor((Math.random()*random_vids.length));
+    // Pops out the video ID we're using so we don't re-use
+    return array_pop(random_vids, i);
+};
 
-    var play_new_vid = function() {
-        player.loadVideoById(get_random_vid());
-    };
+var play_new_vid = function() {
+    player.loadVideoById(get_random_vid());
+};
 
-      var tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          videoId: get_random_vid(),
-          playerVars: {
-            controls: 0,
-            showinfo: 0,
-            loop: 1
-          },
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      videoId: get_random_vid(),
+      playerVars: {
+        controls: 0,
+        showinfo: 0,
+        loop: 1
+      },
+      events: {
+        'onReady': scrollActivate,
+        'onStateChange': onPlayerStateChange
       }
+    });
+  }
 
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
+function scrollActivate(event) {
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    event.target.playVideo();
+  }
+};
 
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      function onPlayerStateChange(event) {
-        event.target.play_new_vid();
-      };
+var done = false;
+function onPlayerStateChange(event) {
+  event.target.play_new_vid();
+};
+
+$(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+       alert("bottom!");
+   }
+});
 
 
-
+// CSS trickery
 
 var navbarHeight = $('.navbar').height(); 
 
@@ -107,7 +107,4 @@ $(window).scroll(function() {
     $('.navbar').css({"box-shadow": "none"});
   }
   
-  
-  
 });
-
