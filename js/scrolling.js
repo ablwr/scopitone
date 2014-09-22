@@ -65,11 +65,20 @@ function onPlayerStateChange(event) {
   event.target.play_new_vid();
 };
 
+
+function getDocHeight() {
+    var D = document;
+    return Math.max(
+        D.body.scrollHeight, D.documentElement.scrollHeight,
+        D.body.offsetHeight, D.documentElement.offsetHeight,
+        D.body.clientHeight, D.documentElement.clientHeight
+    );
+}
 $(window).scroll(function() {
-   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-       alert("bottom!");
-   }
-});
+       if($(window).scrollTop() + $(window).height() == getDocHeight()) {
+           alert("bottom!");
+       }
+   });
 
 
 // CSS trickery
