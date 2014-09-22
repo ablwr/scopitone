@@ -18,14 +18,11 @@ var random_vids = [
     ];
 
 var array_pop = function(arr, i) {
-    // slice() modifies the array in-place and returns an array
-    // of the element we want.
     return arr.splice(i,1)[0]; 
 };
 
 var get_random_vid = function() {
     var i = Math.floor((Math.random()*random_vids.length));
-    // Pops out the video ID we're using so we don't re-use
     return array_pop(random_vids, i);
 };
 
@@ -33,12 +30,13 @@ var play_new_vid = function() {
     player.loadVideoById(get_random_vid());
 };
 
-  var tag = document.createElement('script');
+var tag = document.createElement('script');
   tag.src = "https://www.youtube.com/iframe_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
+var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-  var player;
+var player;
+
   function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
       videoId: get_random_vid(),
@@ -52,7 +50,7 @@ var play_new_vid = function() {
         'onStateChange': onPlayerStateChange
       }
     });
-  }
+  };
 
 function scrollActivate(event) {
   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
@@ -65,7 +63,6 @@ function onPlayerStateChange(event) {
   event.target.play_new_vid();
 };
 
-
 function getDocHeight() {
     var D = document;
     return Math.max(
@@ -73,9 +70,10 @@ function getDocHeight() {
         D.body.offsetHeight, D.documentElement.offsetHeight,
         D.body.clientHeight, D.documentElement.clientHeight
     );
-}
+  };
+
 $(window).scroll(function() {
        if($(window).scrollTop() + $(window).height() == getDocHeight()) {
            alert("bottom!");
-       }
+       };
    });
