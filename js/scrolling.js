@@ -1,20 +1,7 @@
 var random_vids = [
-    "Vow27wAwXvw",
-    "sQ4X-A4rSgY",
-    "0ZVKVCrtfDA",
-    "XyUxjR8vKiM",
-    "898oHCARiK4",
-    "WoC33S0o6f0",
-    "L6dyo2zfJVQ",
-    "stOeGcDnsj8",
-    "rk1-NaEXrmI",
-    "z9kHj4FTgek",
-    "1mBteyxYPtA",
-    "Hkx4vUUqa0",
-    "unjvxHtcpKQ",
-    "YBCzUi67eZA",
-    "IvZLA4En-ug",
-    "dcq-RJ4lVe4"
+    "qmHfxUxHIWw",
+    "7aTO_PWxmuY",
+    "-wSW_bwJXvo"
     ];
 
 var array_pop = function(arr, i) {
