@@ -1,3 +1,5 @@
+// scrolling bits
+
 var lastScrollTop = 0;
 var backgroundImages = $('.backgroundImage'); 
 
@@ -19,7 +21,7 @@ $(window).scroll(function(e){
 
 $(window).scroll();
 
-
+// video bits
 
 var random_vids = [
     "qmHfxUxHIWw",

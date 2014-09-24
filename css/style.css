@@ -25,7 +25,7 @@ body {
 .backgroundImage {
   overflow: hidden;
   height: 100%;
-  background-image: url(http://placehold.it/1366x768/666666);
+  background-image: url('binding_dark.png');
   background-size: cover;
   background-position: 50% 50%;
   position: relative;
@@ -51,16 +51,12 @@ footer {
   background: #333;
 }
 
-
-
-
 #chevron {
-  z-index: 1;
   position: absolute;
   text-align: center;
   padding: 18px;
   margin-bottom: 6px;
-  height: 260px;
+  height: 60px;
   width: 100%;
 }
 
@@ -95,21 +91,20 @@ footer {
 }​
 
 #chevron2 {
-  z-index: 2;
   position: absolute;
   text-align: center;
   padding: 18px;
-  margin-bottom: 12px;
-  height: 40px;
+  margin-bottom: 6px;
+  height: 60px;
   width: 100%;
 }
 
-#chevron2:before {
+/*#chevron2:before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  height: 60%;
+  height: 100%;
   width: 50%;
   background: teal;
   -webkit-transform: skew(0deg, 8deg);
@@ -124,7 +119,7 @@ footer {
   position: absolute;
   top: 0;
   right: 0;
-  height: 60%;
+  height: 100%;
   width: 50%;
   background: teal;
   -webkit-transform: skew(0deg, -8deg);
@@ -132,7 +127,7 @@ footer {
   -ms-transform: skew(0deg, -8deg);
   -o-transform: skew(0deg, -8deg);
   transform: skew(0deg, -8deg);
-}​
+}​*/
 
 .center {     
     height: 30px; 
@@ -161,7 +156,7 @@ footer {
 }
 
 p {
-  color: white;
+  color: gold;
 }
 
 h1 {
