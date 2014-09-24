@@ -1,7 +1,58 @@
-body {
+html, body {
   background-image:url('binding_dark.png');
   background-color: #000;
+  height: 100%;
+  width: 100%;
 }
+
+body {
+  margin: 0;
+  font-family: Calibri, sans-serif;
+  color: #333;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.image {
+  overflow: hidden;
+  height: 300px;
+}
+
+.header {
+  height: 500px;
+}
+
+.backgroundImage {
+  overflow: hidden;
+  height: 100%;
+  background-image: url(http://placehold.it/1366x768/666666);
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
+}
+
+#header {
+  background-image: url(http://placehold.it/1366x768/666666/&text=Scopitone);
+}
+
+.content {
+  background: white;
+}
+
+.content article {
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 480px;
+}
+
+footer {
+  padding: 10px;
+  color: white;
+  background: #333;
+}
+
+
+
 
 #chevron {
   z-index: 1;
