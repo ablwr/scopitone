@@ -7,7 +7,7 @@ html, body {
 
 body {
   margin: 0;
-  font-family: Calibri, sans-serif;
+  font-family: 'Abril Fatface', cursive;
   color: #333;
   text-align: center;
   overflow-x: hidden;
@@ -26,13 +26,12 @@ body {
   overflow: hidden;
   height: 100%;
   background-image: url('binding_dark.png');
-  background-size: cover;
-  background-position: 50% 50%;
-  position: relative;
+  background-repeat: repeat-y;
 }
 
 #header {
-  background-image: url(http://placehold.it/1366x768/666666/&text=Scopitone);
+  background-image: url('binding_dark.png');
+  background-repeat: repeat-y;
 }
 
 .content {
@@ -159,7 +158,7 @@ h1 {
   z-index: 2;
   position: absolute;
   text-align: center;
-  font-family: 'Lobster Two', cursive;
+  font-family: 'Abril Fatface', cursive;
   font-family: inherit
   font-weight: 500;
   line-height: 1.1;
