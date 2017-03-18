@@ -40,7 +40,7 @@
 
 // video section
 
-var random_vids = [
+var randomVids = [
   "2ao4ILWfl8U",
   "KgQKzFOidW4",
 	"tBS5CvcxoLc",
@@ -49,7 +49,6 @@ var random_vids = [
 	"qmHfxUxHIWw",
 	"X17VWR8QkRY",
 	"wSW_bwJXvo",
-	"2flWRK9JbGs",
 	"Kk-sstsfA3c",
 	"FgVPmnJ1Wi4",
 	"7aTO_PWxmuY",
@@ -75,13 +74,13 @@ var random_vids = [
 	"y8Oshs1fWrY"
   ];
 
-var array_pop = function(arr, i) {
+var arrayPop = function(arr, i) {
   return arr.splice(i,1)[0];
 };
 
-var get_random_vid = function() {
-  i = Math.floor((Math.random()*random_vids.length));
-  return array_pop(random_vids, i);
+var getRandomVid = function() {
+  i = Math.floor((Math.random()*randomVids.length));
+  return arrayPop(randomVids, i);
 };
 
 var tag = document.createElement('script');
@@ -95,15 +94,14 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
 		height: '480',
     width: '640',
-    videoId: get_random_vid(),
+    videoId: getRandomVid(),
     playerVars: {
       controls: 0,
       showinfo: 0,
       loop: 1
     },
     events: {
-      'onReady': playVideo,
-      'onStateChange': onPlayerStateChange
+      'onReady': playVideo
     }
   });
 };
