@@ -26,6 +26,10 @@
 		line-height: 1;
 	}
 
+	iframe {
+	  width: 100%;
+	}
+	
 	ol, ul {
 		list-style: none;
 	}
