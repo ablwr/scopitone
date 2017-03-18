@@ -1,8 +1,4 @@
-/*
-	Directive by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+// HTML5 Up section
 
 (function($) {
 
@@ -42,22 +38,50 @@
 
 })(jQuery);
 
+// video section
 
 var random_vids = [
-    "2ao4ILWfl8U",
-    "KgQKzFOidW4",
-    "OEa53h9fOvE",
-		"tBS5CvcxoLc",
-		"EnN8AgsWQnU"
-    ];
+  "2ao4ILWfl8U",
+  "KgQKzFOidW4",
+	"tBS5CvcxoLc",
+	"EnN8AgsWQnU",
+	"tBS5CvcxoLc",
+	"qmHfxUxHIWw",
+	"X17VWR8QkRY",
+	"wSW_bwJXvo",
+	"2flWRK9JbGs",
+	"Kk-sstsfA3c",
+	"FgVPmnJ1Wi4",
+	"7aTO_PWxmuY",
+	"cpom7i9G778",
+	"sqRSpbrAhqU",
+	"mLcYYw4Jd-A",
+	"u4rqGLS6_Io",
+	"fQzYcl83h4o",
+	"jgQ6V7xroQg",
+	"dgqJeMdLmIs",
+	"qrRVuvzedgU",
+	"MoNbDb0bc_s",
+	"ePqC-vkulzo",
+	"bzDWQr1cCtQ",
+	"wTOMMgyUcgc",
+	"Ztc_dN7L1UY",
+	"_HeQVMMrVKg",
+	"XW2SV8eyH_4",
+	"0jopcDADGtI",
+	"e3LerzVQ2Q",
+	"WjacT4vSQbo",
+	"rCl9Z8yUw0A",
+	"y8Oshs1fWrY"
+  ];
 
 var array_pop = function(arr, i) {
-    return arr.splice(i,1)[0];
+  return arr.splice(i,1)[0];
 };
 
 var get_random_vid = function() {
-    i = Math.floor((Math.random()*random_vids.length));
-    return array_pop(random_vids, i);
+  i = Math.floor((Math.random()*random_vids.length));
+  return array_pop(random_vids, i);
 };
 
 var tag = document.createElement('script');
@@ -69,6 +93,8 @@ var player;
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
+		height: '480',
+    width: '640',
     videoId: get_random_vid(),
     playerVars: {
       controls: 0,
@@ -76,34 +102,16 @@ function onYouTubeIframeAPIReady() {
       loop: 1
     },
     events: {
-      'onReady': scrollActivate,
+      'onReady': playVideo,
       'onStateChange': onPlayerStateChange
     }
   });
 };
 
-function scrollActivate(event) {
-  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-    event.target.playVideo();
-  }
-};
-
-var done = false;
-function onPlayerStateChange(event) {
+function playVideo(event) {
   event.target.playVideo();
 };
 
-function getDocHeight() {
-  var D = document;
-  return Math.max(
-    D.body.scrollHeight, D.documentElement.scrollHeight,
-    D.body.offsetHeight, D.documentElement.offsetHeight,
-    D.body.clientHeight, D.documentElement.clientHeight
-  );
+function onPlayerStateChange(event) {
+  event.target.playVideo();
 };
-
-$(window).scroll(function() {
-   if($(window).scrollTop() + $(window).height() == getDocHeight()) {
-       scrollActivate;
-   };
- });
